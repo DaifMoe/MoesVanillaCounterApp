@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moe's Counter!</title>
+</head>
+<body>
+<style>
+  button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    background-color: #08746c;
+    color: white;
+    border: 0;
+    font-size: 24px;
+    margin: 10px;
+  }
+  label, span {
+      margin: 10px;
+      font-size: 32px;
+  }
+
+</style>
+<div>
+    <label> Count: </label>
+    <span id="mySpan"> 0 </span>
+</div>
+
+<button onclick="upButton()">Up</button>
+<button onclick="downButton()">Down</button>
+<button onclick="resetButton()">Reset</button>
+<br>
+<label>
+    Change Amount:
+</label>
+<input type="number" id="changeAmount" value = 0 />
+
+<script>
+    let count = 1;
+  function upButton(){
+      let changeAmount = parseInt(document.getElementById("changeAmount").value);
+    count = count + changeAmount;
+    document.getElementById("mySpan").innerHTML = count;
+  }
+  function downButton(){
+      let changeAmount = parseInt(document.getElementById("changeAmount").value);
+      count = count - changeAmount;
+      document.getElementById("mySpan").innerHTML = count;
+  }
+  function resetButton(){
+    document.getElementById("mySpan").innerHTML = 0;
+  }
+</script>
+</body>
+</html>
